@@ -18,15 +18,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-let app;
-let db;
-
-try {
-  app = initializeApp(firebaseConfig);
-  db = getFirestore(app);
-  console.log('Firebase initialized successfully');
-} catch (error) {
-  console.error('Firebase initialization error:', error);
 }
 
 // Function to save assessment response to Firestore
