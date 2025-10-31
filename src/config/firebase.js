@@ -13,17 +13,9 @@ const firebaseConfig = {
   messagingSenderId: "589090776939",
   appId: "1:589090776939:web:ca758ffee2c87c554f8e2e"
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-let app;
-let db;
-
-try {
-  app = initializeApp(firebaseConfig);
-  db = getFirestore(app);
-  console.log('Firebase initialized successfully');
-} catch (error) {
-  console.error('Firebase initialization error:', error);
 }
 
 // Function to save assessment response to Firestore
