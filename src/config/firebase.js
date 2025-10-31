@@ -2,15 +2,14 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore';
 
 // Firebase configuration
-// INSTRUCTIONS: Replace these values with your Firebase project credentials
-// Get these from: Firebase Console > Project Settings > Your apps > Firebase SDK snippet
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBkVBgk18_o-c6NXMfhywlUd89PQVPp0e0",
+  authDomain: "flhswc-6806.firebaseapp.com",
+  projectId: "flhswc-6806",
+  storageBucket: "flhswc-6806.firebasestorage.app",
+  messagingSenderId: "589090776939",
+  appId: "1:589090776939:web:ca758ffee2c87c554f8e2e"
 };
 
 // Initialize Firebase
