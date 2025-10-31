@@ -415,9 +415,9 @@ For technical issues or questions about the code, please open an issue on GitHub
 
 ## License
 
-This project is for educational and research purposes.
+This project is for educational and graduate research purposes.
 
-© 2024 Eryn M. Spurling - Florida High School Writing Centers Research Project
+© 2024 Eryn M. Shorthill - Florida High School Writing Centers Research Project
 
 ---
 
