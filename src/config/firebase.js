@@ -1,10 +1,12 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, query, orderBy } from 'firebase/firestore';
 
-// Firebase configuration
-// INSTRUCTIONS: Replace these values with your Firebase project credentials
-// Get these from: Firebase Console > Project Settings > Your apps > Firebase SDK snippet
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBkVBgk18_o-c6NXMfhywlUd89PQVPp0e0",
   authDomain: "flhswc-6806.firebaseapp.com",
@@ -15,6 +17,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+const app = initializeApp(firebaseConfig);
 let app;
 let db;
 
