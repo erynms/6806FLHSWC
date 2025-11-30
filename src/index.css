@@ -1,27 +1,100 @@
+/* Import HS Writing Center Aesthetic Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-parchment text-sepia font-body;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(198, 123, 92, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(139, 158, 125, 0.03) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Paper texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-sepia;
+  }
+
+  ::selection {
+    @apply bg-terracotta-light text-parchment-light;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg;
+    @apply bg-terracotta hover:bg-terracotta-light text-parchment-light font-heading font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply bg-sage hover:bg-sage-light text-parchment-light font-heading font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-subtle hover:shadow-soft;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-terracotta text-terracotta hover:bg-terracotta hover:text-parchment-light font-heading font-semibold py-3 px-6 rounded-lg transition-all duration-200;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+    @apply bg-parchment-light rounded-lg shadow-soft p-6 border relative transition-all duration-200 hover:-translate-y-1 hover:shadow-medium;
+    border-color: rgba(62, 56, 50, 0.08);
+  }
+
+  /* Note card corner fold effect */
+  .card::after {
+    content: '';
+    @apply absolute top-0 right-0 w-6 h-6;
+    background: linear-gradient(135deg, transparent 50%, rgba(62, 56, 50, 0.05) 50%);
+    border-radius: 0 1rem 0 0;
   }
 
   .input-field {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply w-full px-4 py-3 bg-parchment border-2 border-parchment-dark rounded-md font-body text-sepia transition-all duration-200;
+    @apply focus:ring-0 focus:border-terracotta focus:shadow-[0_0_0_3px_rgba(198,123,92,0.1)] focus:outline-none;
+  }
+
+  .input-field::placeholder {
+    @apply text-sepia-light;
+  }
+
+  /* Progress bar with warm colors */
+  .progress-bar {
+    @apply h-3 bg-parchment-dark rounded-full overflow-hidden shadow-subtle;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-terracotta-dark to-terracotta transition-all duration-500 ease-out;
+  }
+
+  /* Alert/notification styles with warm aesthetic */
+  .alert {
+    @apply rounded-lg p-4 border-l-4 shadow-subtle mb-4;
+  }
+
+  .alert-info {
+    @apply bg-sage/10 border-sage text-sepia;
+  }
+
+  .alert-success {
+    @apply bg-olive/10 border-olive text-sepia;
+  }
+
+  .alert-warning {
+    @apply bg-terracotta/10 border-terracotta text-sepia;
   }
 }
